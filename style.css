@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500&family=Orbitron:wght@500&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #222222;
+}
+
+/* This is the styling for the header/navbar */
+li, a, button {
+    font-family: 'Handjet', cursive;
+    font-weight: 500;
+    font-size: 30px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    height: 75px;
+    width: 100%;
+    background-color: #24252a;
+    border-bottom: red solid 1px;
+}
+img.logo {
+    cursor: pointer;
+    margin-right: auto;
+    height: 1px;
+    width: 1px;
+}
+.nav_links {
+    list-style: none;
+}
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover {
+    color: #0088a9;
+}
+.content {
+       background-color: #000000;
+}
+/* This is for styling the start page content */
+div#startPage{
+    text-align: center;
+}
+h1.startTitle{
+    font-family: 'Handjet', cursive;
+    font-size: 50px;
+    color: #edf0f1;
+    /* margin: 50px 0px 25px 0px; */
+}
+h1#titleStart{
+    margin: 50px 0px -30px 0px;
+}
+h1#titleEnd{
+    margin: 0px 0px 20px 0px;
+}
+h1#legendary {
+    font-size: 125px;
+    color: #d4af37;
+}
+input{
+    font-family: 'Handjet', cursive;
+}
+input.input-text{
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px 10px 10px 10px;
+    background-color: #222222;
+    border: #edf0f1 solid 1px;
+    color: #edf0f1;
+    height: 50px;
+    font-size: 30px;
+}
+input#submitBtn{
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    margin: 10px 10px 10px 10px;
+    font-size: 20px;
+}
+/*This is for styling the score page content*/
+div#content{
+    display: inline-block;
+    width: 100%;
+    height: 1000px;
+}
+div#scoreContainer{
+    margin: 75px 23% 0px 23%;
+    height: 600px;
+    width: 54%;
+}
+div#playerContainer{
+    display: flex;
+    justify-content: center;
+}
+div.playerNameScore{
+    width: 355px;
+    height: 480px;
+    color: #edf0f1;
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+div#playerOne{
+    margin-right: 30px;
+}
+div#playerTwo{
+    margin-left: 30px;
+}
+h1.playerName{
+    font-family: 'Handjet', cursive;
+    margin-bottom: 10px;
+}
+button.playerScore{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 200px;
+}
+button.playerScore{
+    display: inline-block;
+    height: 400px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+}
+button.playerScore > p {
+    transform: scale(.75, 2);
+}
+div#resetSubmitBtns{
+    display: flex;
+    justify-content: center;
+}
+button.resetSubmitBtns{
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+button#resetBtn{
+    background-color: #dc143c;
+    margin-right: 10px;
+}
+button#submitBtn{
+    background-color: #4CAF50;
+    margin-left: 10px;
+}
+
+/* This is for styling the history page */
+h1#histPageTitle{
+    width: 100%;
+    text-align: center;
+    color: #edf0f1;
+    font-family: 'Handjet', cursive;
+    font-size: 200px;
+    margin: 100px 0px 50px 0px;
+}
+div.histPageGame{
+    color: #edf0f1;
+    text-align: center;
+    margin: 15px 350px 45px 350px;
+    padding: 5px 5px 5px 5px;
+    height: 90px;
+    border: #edf0f1 solid 2px;
+    border-radius: 10px;
+}
+div.histPageP1, div.histPageP2{
+    display: inline-block;
+    width: 250px;
+}
+div.histPageP1{
+    margin: 0px 15px 0px 0px;
+    float: left;
+}
+div.histPageP2{
+    margin: 0px 0px 0px 15px;
+    float: right;
+}
+h4.histPageName{
+    font-family: 'Handjet', cursive;
+    font-size: 40px;
+}
+p.histPageScore{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+}

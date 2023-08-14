@@ -1,0 +1,28 @@
+{
+  "games": [
+    {
+      "player1": "Sky Sweeney",
+      "points1": 21,
+      "player2": "Juan Ortiz-Acosta",
+      "points2": 18,
+      "winner": "Sky Sweeney",
+      "id": 1
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 22,
+      "player2": "Tri Hoang",
+      "points2": 20,
+      "winner": "Kamyar Taghavi",
+      "id": 2
+    },
+    {
+      "player1": "Ryan Meyers",
+      "points1": 30,
+      "player2": "Baran Yildiran",
+      "points2": 28,
+      "winner": "Ryan Meyers",
+      "id": 3
+    }
+  ]
+}
