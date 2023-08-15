@@ -163,7 +163,7 @@ function loadScoreKeeper(player1Name, player2Name, firstServe){
             }),
         })
         .then(r => r.json())
-        .then(gameObj => calcStats(gameObj))
+        // .then(gameObj => calcStats(gameObj))
         .then(smthn => loadStartPage())
     })
 }
@@ -379,15 +379,15 @@ function calcAvgPointsPerGame() {
 
 
 function init() {
-    // loadStartPage();
-    // document.querySelector(`#homeLink`).addEventListener(`click`, () => {
-    //     loadStartPage();
+    loadStartPage();
+    document.querySelector(`#homeLink`).addEventListener(`click`, () => {
+        loadStartPage();
+    });
+    // document.querySelector(`#statLink`).addEventListener(`click`, () => {
+    //     loadStatisticsPage();
     // });
-    // // document.querySelector(`#statLink`).addEventListener(`click`, () => {
-
-    // // })
-    // document.querySelector(`#histLink`).addEventListener(`click`, () => {
-    //     loadHistoryPage();
-    // });
+    document.querySelector(`#histLink`).addEventListener(`click`, () => {
+        loadHistoryPage();
+    });
     
 }

@@ -63,6 +63,102 @@
       "points2": 17,
       "winner": "Kamyar Taghavi",
       "id": 8
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Sky Sweeney",
+      "points2": 15,
+      "winner": "Tri Hoang",
+      "id": 9
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Sky Sweeney",
+      "points2": 19,
+      "winner": "Tri Hoang",
+      "id": 10
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Juan Ortiz-Acosta",
+      "points2": 19,
+      "winner": "Tri Hoang",
+      "id": 11
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 17,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 12
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Kamyar Taghavi",
+      "points2": 18,
+      "winner": "Tri Hoang",
+      "id": 13
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Kamyar Taghavi",
+      "points2": 18,
+      "winner": "Tri Hoang",
+      "id": 14
+    },
+    {
+      "player1": "Cooper",
+      "points1": 22,
+      "player2": "Jerrick",
+      "points2": 20,
+      "winner": "Cooper",
+      "id": 15
+    },
+    {
+      "player1": "Cooper",
+      "points1": 21,
+      "player2": "Sky Sweeney",
+      "points2": 17,
+      "winner": "Cooper",
+      "id": 16
+    },
+    {
+      "player1": "Jerrick",
+      "points1": 21,
+      "player2": "Cooper",
+      "points2": 19,
+      "winner": "Jerrick",
+      "id": 17
+    },
+    {
+      "player1": "Jerrick",
+      "points1": 17,
+      "player2": "Tri Hoang",
+      "points2": 21,
+      "winner": "Tri Hoang",
+      "id": 18
+    },
+    {
+      "player1": "Sky Sweeny",
+      "points1": 13,
+      "player2": "Tri Hoang",
+      "points2": 21,
+      "winner": "Tri Hoang",
+      "id": 19
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 21,
+      "player2": "Tri Hoang",
+      "points2": 15,
+      "winner": "Kamyar Taghavi",
+      "id": 20
     }
   ],
   "playerStats": [
@@ -78,24 +174,24 @@
     {
       "name": "Juan Ortiz-Acosta",
       "wins": 0,
-      "losses": 0,
-      "gamesPlayed": 0,
+      "losses": 1,
+      "gamesPlayed": 1,
       "avgPointsScored": 0,
       "totalPoints": 0,
       "id": 2
     },
     {
       "name": "Kamyar Taghavi",
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
-      "gamesPlayed": 0,
+      "gamesPlayed": 1,
       "avgPointsScored": 0,
       "totalPoints": 0,
       "id": 3
     },
     {
       "name": "Tri Hoang",
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "gamesPlayed": 0,
       "avgPointsScored": 0,
