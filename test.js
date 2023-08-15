@@ -162,7 +162,9 @@ function loadScoreKeeper(player1Name, player2Name, firstServe){
                 winner: playerWhoWon
             }),
         })
-        .then(r => loadStartPage())
+        .then(r => r.json())
+        .then(gameObj => calcStats(gameObj))
+        .then(smthn => loadStartPage())
     })
 }
 
@@ -170,7 +172,7 @@ function loadHistoryPage() {
     contentDiv.innerHTML = "";
 
     const histPageTitleH1 = document.createElement(`h1`);
-        histPageTitleH1.id = `histPageTitle`;
+        histPageTitleH1.className = `pageTitle`;
         histPageTitleH1.textContent = `Game History`;
     contentDiv.append(histPageTitleH1);
 
@@ -211,30 +213,164 @@ function loadStatisticsPage() {
     contentDiv.innerHTML = "";
 
     const histPageTitleH1 = document.createElement(`h1`);
-        histPageTitleH1.id = `statPageTitle`;
+        histPageTitleH1.className = `pageTitle`;
         histPageTitleH1.textContent = `Player Stats`;
-    contentDiv.append(histPageTitleH1);
+    contentDiv.append(histPageTitleH1);  
+}
 
-    fetch("http://localhost:3000/games")
-    .then(r => r.json())
-    .then(games => {
-        games.forEach();
-    })    
+function calcStats(gameObj){
+    checkPlayerName(gameObj);
+    calcWins(gameObj);
+    calcLosses(gameObj);
+    calcGamesPlayed(gameObj);
+    calcTotalPoints(gameObj);
+    calcAvgPointsPerGame();
 }
 
 
+function checkPlayerName(gameObj){
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        if (gameObj[`player1`] !== player[`name`]) {
+            addPlayer(gameObj[`player1`]);
+        } else if (gameObj[`player2`] !== player[`name`]){
+            addPlayer(gameObj[`player2`]);
+        }
+    }))
+}
+function addPlayer(pName) {
+    fetch("http://localhost:3000/playerStats", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify({
+                name: pName,
+                wins: 0,
+                losses: 0,
+                gamesPlayed: 0,
+                avgPointsScored: 0
+            }),
+        })
+        .then(r => r.json());
+}
 
+function calcWins(gameObj){
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        if(player[`name`] === gameObj[`winner`]){
+            fetch(`http://localhost:3000/playerStats/${player[`id`]}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    wins: player[`wins`] + 1
+                })
+            })
+            .then(r => r.json())
+        }
+    }))
+}
 
-
-
-
-
-
-
-function currentServer (totalPoints = 0){
-    if(totalPoints % 5 === 0){
-        isCurrentServer = !isCurrentServer;
+function calcLosses(gameObj) {
+    let loser = "";
+    if (gameObj[`player1`] === gameObj[`winner`]){
+        loser = gameObj[`player2`];
+    } else if (gameObj[`player2`] === gameObj[`winner`]){
+        loser = gameObj[`player1`];
     }
+
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        if(player[`name`] === loser){
+            fetch(`http://localhost:3000/playerStats/${player[`id`]}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    losses: player[`losses`] + 1
+                })
+            })
+            .then(r => r.json())
+        }
+    }))
+}
+
+function calcGamesPlayed(gameObj) {
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        if(player[`name`] === gameObj[`player1`] || player[`name`] === gameObj[`player2`]){
+            fetch(`http://localhost:3000/playerStats/${player[`id`]}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    gamesPlayed: player[`gamesPlayed`] + 1
+                })
+            })
+            .then(r => r.json())
+        }
+    }))
+}
+
+function calcTotalPoints(gameObj) {
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        if(player[`name`] === gameObj[`player1`]){
+            fetch(`http://localhost:3000/playerStats/${player[`id`]}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    totalPoints: player[`totalPoints`] + gameObj[`points1`]
+                })
+            })
+            .then(r => r.json())
+        } else if (player[`name`] === gameObj[`player2`]){
+            fetch(`http://localhost:3000/toys/${player[`id`]}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    totalPoints: player[`totalPoints`] + gameObj[`points2`]
+                })
+            })
+            .then(r => r.json())
+        }
+    }))
+}
+
+function calcAvgPointsPerGame() {
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        fetch(`http://localhost:3000/toys/${player[`id`]}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    totalPoints: player[`totalPoints`] / player[`gamesPlayed`]
+                })
+            })
+    }))
 }
 
 
@@ -243,15 +379,15 @@ function currentServer (totalPoints = 0){
 
 
 function init() {
-    loadStartPage();
-    document.querySelector(`#homeLink`).addEventListener(`click`, () => {
-        loadStartPage();
-    });
-    // document.querySelector(`#statLink`).addEventListener(`click`, () => {
+    // loadStartPage();
+    // document.querySelector(`#homeLink`).addEventListener(`click`, () => {
+    //     loadStartPage();
+    // });
+    // // document.querySelector(`#statLink`).addEventListener(`click`, () => {
 
-    // })
-    document.querySelector(`#histLink`).addEventListener(`click`, () => {
-        loadHistoryPage();
-    });
+    // // })
+    // document.querySelector(`#histLink`).addEventListener(`click`, () => {
+    //     loadHistoryPage();
+    // });
     
 }

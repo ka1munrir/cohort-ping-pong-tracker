@@ -176,7 +176,7 @@ button#submitBtn{
 }
 
 /* This is for styling the history page */
-h1#histPageTitle{
+h1.pageTitle{
     width: 100%;
     text-align: center;
     color: #edf0f1;
@@ -213,3 +213,4 @@ p.histPageScore{
     font-family: 'Orbitron', sans-serif;
     font-size: 25px;
 }
+

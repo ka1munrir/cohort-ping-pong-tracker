@@ -23,6 +23,102 @@
       "points2": 28,
       "winner": "Ryan Meyers",
       "id": 3
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 21,
+      "player2": "Tri Hoang",
+      "points2": 14,
+      "winner": "Kamyar Taghavi",
+      "id": 4
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 21,
+      "player2": "Tri Hoang",
+      "points2": 12,
+      "winner": "Kamyar Taghavi",
+      "id": 5
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 16,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 6
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 15,
+      "player2": "Baran Yildiran",
+      "points2": 21,
+      "winner": "Baran Yildiran",
+      "id": 7
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 21,
+      "player2": "Baran Yildiran",
+      "points2": 17,
+      "winner": "Kamyar Taghavi",
+      "id": 8
+    }
+  ],
+  "playerStats": [
+    {
+      "name": "Sky Sweeney",
+      "wins": 0,
+      "losses": 0,
+      "gamesPlayed": 0,
+      "avgPointsScored": 0,
+      "totalPoints": 0,
+      "id": 1
+    },
+    {
+      "name": "Juan Ortiz-Acosta",
+      "wins": 0,
+      "losses": 0,
+      "gamesPlayed": 0,
+      "avgPointsScored": 0,
+      "totalPoints": 0,
+      "id": 2
+    },
+    {
+      "name": "Kamyar Taghavi",
+      "wins": 0,
+      "losses": 0,
+      "gamesPlayed": 0,
+      "avgPointsScored": 0,
+      "totalPoints": 0,
+      "id": 3
+    },
+    {
+      "name": "Tri Hoang",
+      "wins": 0,
+      "losses": 0,
+      "gamesPlayed": 0,
+      "avgPointsScored": 0,
+      "totalPoints": 0,
+      "id": 4
+    },
+    {
+      "name": "Ryan Meyers",
+      "wins": 0,
+      "losses": 0,
+      "gamesPlayed": 0,
+      "avgPointsScored": 0,
+      "totalPoints": 0,
+      "id": 5
+    },
+    {
+      "name": "Baran Yildiran",
+      "wins": 0,
+      "losses": 0,
+      "gamesPlayed": 0,
+      "avgPointsScored": 0,
+      "totalPoints": 0,
+      "id": 6
     }
   ]
 }
