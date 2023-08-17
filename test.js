@@ -163,7 +163,7 @@ function loadScoreKeeper(player1Name, player2Name, firstServe){
             }),
         })
         .then(r => r.json())
-        // .then(gameObj => calcStats(gameObj))
+        .then(gameObj => calcStats(gameObj))
         .then(smthn => loadStartPage())
     })
 }
@@ -212,33 +212,93 @@ function loadHistoryPage() {
 function loadStatisticsPage() {
     contentDiv.innerHTML = "";
 
-    const histPageTitleH1 = document.createElement(`h1`);
-        histPageTitleH1.className = `pageTitle`;
-        histPageTitleH1.textContent = `Player Stats`;
-    contentDiv.append(histPageTitleH1);  
-}
+    const statPageTitleH1 = document.createElement(`h1`);
+        statPageTitleH1.className = `pageTitle`;
+        statPageTitleH1.textContent = `Player Stats`;
+    contentDiv.append(statPageTitleH1);
 
-function calcStats(gameObj){
-    checkPlayerName(gameObj);
-    calcWins(gameObj);
-    calcLosses(gameObj);
-    calcGamesPlayed(gameObj);
-    calcTotalPoints(gameObj);
-    calcAvgPointsPerGame();
-}
-
-
-function checkPlayerName(gameObj){
     fetch("http://localhost:3000/playerStats")
     .then(r => r.json())
     .then(players => players.forEach(player => {
-        if (gameObj[`player1`] !== player[`name`]) {
-            addPlayer(gameObj[`player1`]);
-        } else if (gameObj[`player2`] !== player[`name`]){
-            addPlayer(gameObj[`player2`]);
-        }
+        const indivStatsDiv = document.createElement(`div`);
+            indivStatsDiv.className = `indivStats`;
+        const playerNameH3 = document.createElement(`h3`);
+            playerNameH3.className = `playerName`;
+            playerNameH3.textContent = player[`name`];
+        const statDivDiv = document.createElement(`div`);
+            statDivDiv.className = `statDiv`;
+        const statDivDiv2 = document.createElement(`div`);
+            statDivDiv2.className = `statDiv`;
+        const statDivDiv3 = document.createElement(`div`);
+            statDivDiv3.className = `statDiv`;
+        const statDivDiv4 = document.createElement(`div`);
+            statDivDiv4.className = `statDiv`;
+
+        const winsTitleH5 = document.createElement(`h5`);
+            winsTitleH5.className = `statType`;
+            winsTitleH5.textContent = `Wins`;
+        const winsValP = document.createElement(`p`);
+            winsValP.className = `statValue`;
+            winsValP.textContent = player[`wins`];
+
+        const lossesTitleH5 = document.createElement(`h5`);
+            lossesTitleH5.className = `statType`;
+            lossesTitleH5.textContent = `Losses`;
+        const lossesValP = document.createElement(`p`);
+            lossesTitleH5.className = `statValue`;
+            lossesValP.textContent = player[`losses`];
+        
+        const gamesPlayedTitleH5 = document.createElement(`h5`);
+            gamesPlayedTitleH5.className = `statType`;
+            gamesPlayedTitleH5.textContent = `Games Played`;
+        const gamesPlayedValP = document.createElement(`p`);
+            gamesPlayedValP.className = `statValue`;
+            gamesPlayedValP.textContent = player[`gamesPlayed`];
+        
+        const avgPointsScoredTitleH5 = document.createElement(`h5`);
+            avgPointsScoredTitleH5.className = `statType`;
+            avgPointsScoredTitleH5.textContent = `Point Average`;
+        const avgPointsScoredValP = document.createElement(`p`);
+            avgPointsScoredValP.className = `statValue`;
+            avgPointsScoredValP.textContent = player[`avgPointsScored`].toFixed(2);
+        
+        statDivDiv.append(winsTitleH5, winsValP);
+        statDivDiv2.append(lossesTitleH5, lossesValP);
+        statDivDiv3.append(gamesPlayedTitleH5, gamesPlayedValP);
+        statDivDiv4.append(avgPointsScoredTitleH5, avgPointsScoredValP);
+        indivStatsDiv.append(playerNameH3, statDivDiv, statDivDiv2, statDivDiv3, statDivDiv4);
+        contentDiv.append(indivStatsDiv);
     }))
 }
+
+function calcStats(gameObj){
+    let playerNames = [];
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        playerNames[playerNames.length] = player[`name`];
+    }))
+    .then(smth => {
+        for(let i = 1; i <= 2; i++){
+            const arr = playerNames.filter(function(name){
+                return name === gameObj[`player${i}`];
+            })
+
+            if (arr.length === 0){
+                addPlayer(gameObj[`player${i}`]);
+            }
+        }
+    })
+    .then(smthn => {
+        setTimeout(() => {
+            calcWins(gameObj);
+        }, "1500")
+    })
+
+
+    
+}
+
 function addPlayer(pName) {
     fetch("http://localhost:3000/playerStats", {
             method: "POST",
@@ -251,10 +311,11 @@ function addPlayer(pName) {
                 wins: 0,
                 losses: 0,
                 gamesPlayed: 0,
+                totalPoints: 0,
                 avgPointsScored: 0
             }),
         })
-        .then(r => r.json());
+        .then(r => r.json())
 }
 
 function calcWins(gameObj){
@@ -272,7 +333,7 @@ function calcWins(gameObj){
                     wins: player[`wins`] + 1
                 })
             })
-            .then(r => r.json())
+            .then(r => calcLosses(gameObj))
         }
     }))
 }
@@ -302,6 +363,7 @@ function calcLosses(gameObj) {
             .then(r => r.json())
         }
     }))
+    .then(smth => calcGamesPlayed(gameObj))
 }
 
 function calcGamesPlayed(gameObj) {
@@ -319,7 +381,7 @@ function calcGamesPlayed(gameObj) {
                     gamesPlayed: player[`gamesPlayed`] + 1
                 })
             })
-            .then(r => r.json())
+            .then(r => calcTotalPoints(gameObj))
         }
     }))
 }
@@ -341,7 +403,7 @@ function calcTotalPoints(gameObj) {
             })
             .then(r => r.json())
         } else if (player[`name`] === gameObj[`player2`]){
-            fetch(`http://localhost:3000/toys/${player[`id`]}`, {
+            fetch(`http://localhost:3000/playerStats/${player[`id`]}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -354,20 +416,21 @@ function calcTotalPoints(gameObj) {
             .then(r => r.json())
         }
     }))
+    .then(smthn => calcAvgPointsPerGame())
 }
 
 function calcAvgPointsPerGame() {
     fetch("http://localhost:3000/playerStats")
     .then(r => r.json())
     .then(players => players.forEach(player => {
-        fetch(`http://localhost:3000/toys/${player[`id`]}`, {
+        fetch(`http://localhost:3000/playerStats/${player[`id`]}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
                 },
                 body: JSON.stringify({
-                    totalPoints: player[`totalPoints`] / player[`gamesPlayed`]
+                    avgPointsScored: player[`totalPoints`] / player[`gamesPlayed`]
                 })
             })
     }))
@@ -383,9 +446,9 @@ function init() {
     document.querySelector(`#homeLink`).addEventListener(`click`, () => {
         loadStartPage();
     });
-    // document.querySelector(`#statLink`).addEventListener(`click`, () => {
-    //     loadStatisticsPage();
-    // });
+    document.querySelector(`#statLink`).addEventListener(`click`, () => {
+        loadStatisticsPage();
+    });
     document.querySelector(`#histLink`).addEventListener(`click`, () => {
         loadHistoryPage();
     });
