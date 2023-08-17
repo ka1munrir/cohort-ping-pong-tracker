@@ -245,7 +245,7 @@ function loadStatisticsPage() {
             lossesTitleH5.className = `statType`;
             lossesTitleH5.textContent = `Losses`;
         const lossesValP = document.createElement(`p`);
-            lossesTitleH5.className = `statValue`;
+            lossesValP.className = `statValue`;
             lossesValP.textContent = player[`losses`];
         
         const gamesPlayedTitleH5 = document.createElement(`h5`);

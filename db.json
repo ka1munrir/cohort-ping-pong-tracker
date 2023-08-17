@@ -271,6 +271,70 @@
       "points2": 21,
       "winner": "Kamyar Taghavi",
       "id": 34
+    },
+    {
+      "player1": "Cooper",
+      "points1": 21,
+      "player2": "Jerrick",
+      "points2": 14,
+      "winner": "Cooper",
+      "id": 35
+    },
+    {
+      "player1": "Cooper",
+      "points1": 19,
+      "player2": "Jerrick",
+      "points2": 21,
+      "winner": "Jerrick",
+      "id": 36
+    },
+    {
+      "player1": "Cooper",
+      "points1": 21,
+      "player2": "Jerrick",
+      "points2": 23,
+      "winner": "Jerrick",
+      "id": 37
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 16,
+      "player2": "Juan Ortiz-Acosta",
+      "points2": 21,
+      "winner": "Juan Ortiz-Acosta",
+      "id": 38
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 11,
+      "player2": "Juan Ortiz-Acosta",
+      "points2": 21,
+      "winner": "Juan Ortiz-Acosta",
+      "id": 39
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 15,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 40
+    },
+    {
+      "player1": "Juan Ortiz-Acosta",
+      "points1": 18,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 41
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 21,
+      "player2": "Juan Ortiz-Acosta",
+      "points2": 15,
+      "winner": "Kamyar Taghavi",
+      "id": 42
     }
   ],
   "playerStats": [
@@ -285,29 +349,29 @@
     },
     {
       "name": "Juan Ortiz-Acosta",
-      "wins": 0,
-      "losses": 3,
-      "gamesPlayed": 3,
-      "totalPoints": 57,
-      "avgPointsScored": 19,
+      "wins": 2,
+      "losses": 5,
+      "gamesPlayed": 7,
+      "totalPoints": 117,
+      "avgPointsScored": 19.5,
       "id": 2
     },
     {
       "name": "Kamyar Taghavi",
-      "wins": 17,
-      "losses": 5,
-      "gamesPlayed": 22,
-      "totalPoints": 449,
-      "avgPointsScored": 20.40909090909091,
+      "wins": 20,
+      "losses": 6,
+      "gamesPlayed": 26,
+      "totalPoints": 502,
+      "avgPointsScored": 20.08,
       "id": 3
     },
     {
       "name": "Tri Hoang",
       "wins": 8,
-      "losses": 12,
-      "gamesPlayed": 20,
-      "totalPoints": 350,
-      "avgPointsScored": 17.5,
+      "losses": 14,
+      "gamesPlayed": 22,
+      "totalPoints": 381,
+      "avgPointsScored": 17.318181818181817,
       "id": 4
     },
     {
@@ -330,19 +394,19 @@
     },
     {
       "name": "Cooper",
-      "wins": 2,
-      "losses": 1,
-      "gamesPlayed": 3,
-      "totalPoints": 62,
-      "avgPointsScored": 20.666666666666668,
+      "wins": 3,
+      "losses": 3,
+      "gamesPlayed": 6,
+      "totalPoints": 123,
+      "avgPointsScored": 20.5,
       "id": 7
     },
     {
       "name": "Jerrick",
-      "wins": 1,
-      "losses": 2,
-      "gamesPlayed": 3,
-      "totalPoints": 58,
+      "wins": 3,
+      "losses": 3,
+      "gamesPlayed": 6,
+      "totalPoints": 116,
       "avgPointsScored": 19.333333333333332,
       "id": 8
     },
