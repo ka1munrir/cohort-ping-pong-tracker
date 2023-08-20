@@ -248,13 +248,6 @@ function loadStatisticsPage() {
             lossesValP.className = `statValue`;
             lossesValP.textContent = player[`losses`];
         
-        const gamesPlayedTitleH5 = document.createElement(`h5`);
-            gamesPlayedTitleH5.className = `statType`;
-            gamesPlayedTitleH5.textContent = `Games Played`;
-        const gamesPlayedValP = document.createElement(`p`);
-            gamesPlayedValP.className = `statValue`;
-            gamesPlayedValP.textContent = player[`gamesPlayed`];
-        
         const avgPointsScoredTitleH5 = document.createElement(`h5`);
             avgPointsScoredTitleH5.className = `statType`;
             avgPointsScoredTitleH5.textContent = `Point Average`;
@@ -264,9 +257,8 @@ function loadStatisticsPage() {
         
         statDivDiv.append(winsTitleH5, winsValP);
         statDivDiv2.append(lossesTitleH5, lossesValP);
-        statDivDiv3.append(gamesPlayedTitleH5, gamesPlayedValP);
-        statDivDiv4.append(avgPointsScoredTitleH5, avgPointsScoredValP);
-        indivStatsDiv.append(playerNameH3, statDivDiv, statDivDiv2, statDivDiv3, statDivDiv4);
+        statDivDiv3.append(avgPointsScoredTitleH5, avgPointsScoredValP);
+        indivStatsDiv.append(playerNameH3, statDivDiv, statDivDiv2, statDivDiv3);
         contentDiv.append(indivStatsDiv);
     }))
 }
@@ -290,9 +282,7 @@ function calcStats(gameObj){
         }
     })
     .then(smthn => {
-        setTimeout(() => {
-            calcWins(gameObj);
-        }, "1500")
+        calcWins(gameObj);
     })
 
 
@@ -436,8 +426,57 @@ function calcAvgPointsPerGame() {
     }))
 }
 
+function loadLeaderboardPage() {
+    contentDiv.innerHTML = ``;
 
+    const titleH1 = document.createElement(`h1`);
+        titleH1.textContent = `Leaderboard`;
+        titleH1.className = `pageTitle`;
+    contentDiv.append(titleH1);
 
+    let playerAndAvgPoints = [];
+    fetch("http://localhost:3000/playerStats")
+    .then(r => r.json())
+    .then(players => players.forEach(player => {
+        playerAndAvgPoints[playerAndAvgPoints.length] = [player[`name`], player[`avgPointsScored`].toFixed(2)];
+    }))
+    .then(smthn => {
+        playerAndAvgPoints = quickSortForLeaderboard(playerAndAvgPoints);
+        for(let i = 0; i < playerAndAvgPoints.length; i++){
+            const leaderboardPlayerDiv = document.createElement(`div`);
+                leaderboardPlayerDiv.className = `leaderboardPlayerDiv`;
+            const playerRankingH3 = document.createElement(`h3`);
+                playerRankingH3.className = `leaderboardInfo leaderboardPlayerRanking`;
+                playerRankingH3.textContent = i + 1;
+            const playerNameH3 = document.createElement(`h3`);
+                playerNameH3.textContent = playerAndAvgPoints[i][0];
+                playerNameH3.className = `leaderboardInfo leaderboardPlayerName`;
+            const playerPointsH3 = document.createElement(`h3`);
+                playerPointsH3.className = `leaderboardPlayerPoints`;
+                playerPointsH3.textContent = playerAndAvgPoints[i][1];
+            leaderboardPlayerDiv.append(playerRankingH3, playerNameH3, playerPointsH3);
+            contentDiv.append(leaderboardPlayerDiv);
+        }
+    })
+}
+function quickSortForLeaderboard(arr) {
+    if(arr.length <= 1){
+        return arr;
+    }
+
+    const pivot = arr[0];
+    let left = [];
+    let right = [];
+    for(let i = 1; i < arr.length; i++){
+        if(parseFloat(arr[i][1]) < parseFloat(pivot[1])){
+            left.push(arr[i]);
+        } else {
+            right.push(arr[i]);
+        }
+    }
+    
+    return [...quickSortForLeaderboard(right), pivot, ...quickSortForLeaderboard(left)];
+}
 
 
 
@@ -445,6 +484,9 @@ function init() {
     loadStartPage();
     document.querySelector(`#homeLink`).addEventListener(`click`, () => {
         loadStartPage();
+    });
+    document.querySelector(`#leaderboardLink`).addEventListener(`click`, () => {
+        loadLeaderboardPage();
     });
     document.querySelector(`#statLink`).addEventListener(`click`, () => {
         loadStatisticsPage();

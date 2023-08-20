@@ -225,6 +225,7 @@ div.indivStats{
     border-radius: 10px;
     font-family: 'Handjet', cursive;
     font-size: 40px;
+    
 }
 div.statDiv{
     display: inline-block;
@@ -236,4 +237,29 @@ p.statValue{
     font-size: .6em;
     transform: scale(.9, 2);
     margin: 10px 0px 10px 0px;
+}
+
+/* This is styling for the Leaderboard page */
+.leaderboardPlayerDiv {
+    display: flex;
+    margin: 15px 350px 45px 350px;
+    padding: 5px 50px 5px 50px;
+    height: fit-content;
+    border: #edf0f1 solid 2px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.leaderboardPlayerPoints{
+    color: #edf0f1;
+    font-family: 'Orbitron', sans-serif;
+    transform: scale(.9, 2);
+    display: inline-block;
+
+}
+.leaderboardInfo {
+    display: inline-block;
+    color: #edf0f1;
+    font-family: 'Handjet', cursive;
+    font-size: 40px;
 }

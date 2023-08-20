@@ -335,6 +335,198 @@
       "points2": 15,
       "winner": "Kamyar Taghavi",
       "id": 42
+    },
+    {
+      "player1": "Juan Ortiz-Acosta",
+      "points1": 21,
+      "player2": "Tri Hoang",
+      "points2": 15,
+      "winner": "Juan Ortiz-Acosta",
+      "id": 43
+    },
+    {
+      "player1": "Juan Ortiz-Acosta",
+      "points1": 17,
+      "player2": "Tri Hoang",
+      "points2": 21,
+      "winner": "Tri Hoang",
+      "id": 44
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Juan Ortiz-Acosta",
+      "points2": 11,
+      "winner": "Tri Hoang",
+      "id": 45
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Baran Yildiran",
+      "points2": 18,
+      "winner": "Tri Hoang",
+      "id": 46
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Kamyar Taghavi",
+      "points2": 19,
+      "winner": "Tri Hoang",
+      "id": 47
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 11,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 48
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 19,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 49
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 15,
+      "player2": "Ryan Meyers",
+      "points2": 21,
+      "winner": "Ryan Meyers",
+      "id": 50
+    },
+    {
+      "player1": "Kamyar Taghavi",
+      "points1": 24,
+      "player2": "Tri Hoang",
+      "points2": 22,
+      "winner": "Kamyar Taghavi",
+      "id": 51
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 17,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 52
+    },
+    {
+      "player1": "Terence Hughes",
+      "points1": 14,
+      "player2": "Jake Underwood",
+      "points2": 21,
+      "winner": "Jake Underwood",
+      "id": 53
+    },
+    {
+      "player1": "Jake Underwood",
+      "points1": 21,
+      "player2": "Jerrick",
+      "points2": 17,
+      "winner": "Jake Underwood",
+      "id": 54
+    },
+    {
+      "player1": "Jake Underwood",
+      "points1": 21,
+      "player2": "Cooper",
+      "points2": 8,
+      "winner": "Jake Underwood",
+      "id": 55
+    },
+    {
+      "player1": "Terence Hughes",
+      "points1": 11,
+      "player2": "Jake Underwood",
+      "points2": 21,
+      "winner": "Jake Underwood",
+      "id": 56
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 21,
+      "player2": "Jake Underwood",
+      "points2": 17,
+      "winner": "Tri Hoang",
+      "id": 57
+    },
+    {
+      "player1": "Tri Hoang",
+      "points1": 16,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 58
+    },
+    {
+      "player1": "Terence Hughes",
+      "points1": 16,
+      "player2": "Jake Underwood",
+      "points2": 21,
+      "winner": "Jake Underwood",
+      "id": 59
+    },
+    {
+      "player1": "Terence Hughes",
+      "points1": 5,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 60
+    },
+    {
+      "player1": "David Doan",
+      "points1": 7,
+      "player2": "Kamyar Taghavi",
+      "points2": 21,
+      "winner": "Kamyar Taghavi",
+      "id": 61
+    },
+    {
+      "player1": "Ryan Meyers",
+      "points1": 20,
+      "player2": "Baran Yildiran",
+      "points2": 22,
+      "winner": "Baran Yildiran",
+      "id": 62
+    },
+    {
+      "player1": "Ryan Meyers",
+      "points1": 15,
+      "player2": "Baran Yildiran",
+      "points2": 21,
+      "winner": "Baran Yildiran",
+      "id": 63
+    },
+    {
+      "player1": "Baran Yildiran",
+      "points1": 16,
+      "player2": "Ryan Meyers",
+      "points2": 21,
+      "winner": "Ryan Meyers",
+      "id": 64
+    },
+    {
+      "player1": "Baran Yildiran",
+      "points1": 21,
+      "player2": "Ryan Meyers",
+      "points2": 18,
+      "winner": "Baran Yildiran",
+      "id": 65
+    },
+    {
+      "player1": "gigachad",
+      "points1": 21,
+      "player2": "gigatoad",
+      "points2": 18,
+      "winner": "gigachad",
+      "id": 66
     }
   ],
   "playerStats": [
@@ -349,84 +541,93 @@
     },
     {
       "name": "Juan Ortiz-Acosta",
-      "wins": 2,
-      "losses": 5,
-      "gamesPlayed": 7,
-      "totalPoints": 117,
-      "avgPointsScored": 19.5,
+      "wins": 3,
+      "losses": 7,
+      "gamesPlayed": 10,
+      "totalPoints": 166,
+      "avgPointsScored": 16.6,
       "id": 2
     },
     {
       "name": "Kamyar Taghavi",
-      "wins": 20,
-      "losses": 6,
-      "gamesPlayed": 26,
-      "totalPoints": 502,
-      "avgPointsScored": 20.08,
+      "wins": 27,
+      "losses": 8,
+      "gamesPlayed": 35,
+      "totalPoints": 686,
+      "avgPointsScored": 19.6,
       "id": 3
     },
     {
       "name": "Tri Hoang",
-      "wins": 8,
-      "losses": 14,
-      "gamesPlayed": 22,
-      "totalPoints": 381,
-      "avgPointsScored": 17.318181818181817,
+      "wins": 13,
+      "losses": 20,
+      "gamesPlayed": 33,
+      "totalPoints": 586,
+      "avgPointsScored": 17.757575757575758,
       "id": 4
     },
     {
       "name": "Ryan Meyers",
-      "wins": 2,
-      "losses": 2,
-      "gamesPlayed": 4,
-      "totalPoints": 86,
-      "avgPointsScored": 21.5,
+      "wins": 4,
+      "losses": 5,
+      "gamesPlayed": 9,
+      "totalPoints": 181,
+      "avgPointsScored": 20.11111111111111,
       "id": 5
     },
     {
       "name": "Baran Yildiran",
-      "wins": 2,
-      "losses": 3,
-      "gamesPlayed": 5,
-      "totalPoints": 98,
+      "wins": 5,
+      "losses": 5,
+      "gamesPlayed": 10,
+      "totalPoints": 196,
       "avgPointsScored": 19.6,
       "id": 6
     },
     {
       "name": "Cooper",
       "wins": 3,
-      "losses": 3,
-      "gamesPlayed": 6,
-      "totalPoints": 123,
-      "avgPointsScored": 20.5,
+      "losses": 4,
+      "gamesPlayed": 7,
+      "totalPoints": 131,
+      "avgPointsScored": 18.714285714285715,
       "id": 7
     },
     {
       "name": "Jerrick",
       "wins": 3,
-      "losses": 3,
-      "gamesPlayed": 6,
-      "totalPoints": 116,
-      "avgPointsScored": 19.333333333333332,
+      "losses": 4,
+      "gamesPlayed": 7,
+      "totalPoints": 133,
+      "avgPointsScored": 19,
       "id": 8
     },
     {
       "name": "Terence Hughes",
       "wins": 0,
-      "losses": 1,
-      "gamesPlayed": 1,
-      "totalPoints": 3,
-      "avgPointsScored": 3,
+      "losses": 5,
+      "gamesPlayed": 5,
+      "totalPoints": 49,
+      "avgPointsScored": 9.8,
       "id": 9
     },
     {
       "name": "Jake Underwood",
-      "wins": 1,
-      "losses": 1,
-      "gamesPlayed": 2,
-      "totalPoints": 38,
-      "avgPointsScored": 19,
+      "wins": 6,
+      "losses": 2,
+      "gamesPlayed": 8,
+      "totalPoints": 160,
+      "avgPointsScored": 20,
       "id": 10
+    },
+    {
+      "name": "David Doan",
+      "wins": 0,
+      "losses": 1,
+      "gamesPlayed": 1,
+      "totalPoints": 7,
+      "avgPointsScored": 7,
+      "id": 11
     }
   ]
 }
